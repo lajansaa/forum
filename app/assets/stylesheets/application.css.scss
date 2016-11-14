@@ -1,0 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.dropdown-menu {
+	text-align: center;
+}
+
+.heading {
+	margin: 50px 50px 100px;
+}
+
+.links a:link, .links a:visited, .links a:hover, .links a:active,  { 
+    text-decoration:none;
+    color: black;
+}

@@ -1,0 +1,6 @@
+<p><%= f.label :title, "Title" %></p>
+<p><%= f.text_field :title %></p>
+<p><%= f.label :body, "Body" %></p>
+<p><%= f.text_area :body %></p>
+<p><%= f.label :tag_id, "Tag" %></p>
+<p><%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %></p>

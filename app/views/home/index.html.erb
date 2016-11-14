@@ -1,0 +1,10 @@
+<div class="heading">
+  <h1>The Popular Forum</h1>
+  <h4>Empowered Posts</h4>
+</div>  
+
+<%= column_chart @posts.group(:user_id).count %>
+<br>
+<%= column_chart @posts.group(:created_at).count %>
+<br>
+<%= column_chart @comments.group(:name).count %>

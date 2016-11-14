@@ -1,0 +1,8 @@
+<p>First Name: <%= current_user.first_name %></p>
+<p>Last Name: <%= current_user.last_name %></p>
+<p>Email: <%= current_user.email %></p>
+<p>Address: <%= current_user.address %></p>
+<p>Gender: <%= current_user.gender %></p>
+<p>Number: <%= current_user.number %></p>
+
+<p><%= link_to 'Edit Profile', edit_user_path(current_user) %></p>

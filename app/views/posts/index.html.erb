@@ -1,0 +1,38 @@
+<div class="heading">
+  <h1>Posts</h1>
+</div>  
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort by
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to 'Title', posts_path(:order => "title") %></li>
+    <li><%= link_to 'Last Commented Time', posts_path(:order => "last_commented_at") %></li>
+  </ul>
+</div>
+
+<% @posts.each do |post| %>
+<div class="links">
+<%= link_to post_path(post.id) do %>
+<div class="container">
+  <div class="well">
+      <div class="media">
+    		<h4 class="media-heading"><%= post.title %></h4>
+          <p class="media-body">By <%= post.user.username %></p>
+          <p><%= post.body %></p>
+          <ul class="list-inline list-unstyled">
+            <li><span><i class="glyphicon glyphicon-calendar"></i> <%= (Time.now.to_date - post.created_at.to_date).to_i%> days ago </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> <%= post.comments.count %> comments</span>
+          </ul>
+          <i class="glyphicon glyphicon-tags"></i> <%= post.tags.map{ |t| t.name }.join(", ") %></
+      </div>
+  </div>
+</div>
+<% end %>
+</div>
+<% end %>
+
+<%= paginate @posts %>

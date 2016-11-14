@@ -1,0 +1,11 @@
+<% if @post.errors.any? %>
+	<% @post.errors.full_messages.each do |msg| %>
+		<p><%= msg %></p>
+	<% end %>
+<% end %>
+
+
+<%= form_for @post, :url => posts_path do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+	<p><%= f.submit "Create" %></p>
+<% end %>

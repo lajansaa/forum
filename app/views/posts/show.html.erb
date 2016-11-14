@@ -1,0 +1,16 @@
+<div class="heading">
+  <h1><%= @post.title %></h1>
+</div>
+
+<div class="post-container">
+<p><%= @post.body %></p>
+
+<p><%= button_to "View #{@count_comments} Comments", post_comment_path(@post), :method => :get %></p>
+
+<p>Tags:</p>
+<p>
+<%= @post.tags.map{ |t| t.name }.join(", ") %>
+</p>
+
+<p><%= link_to 'Back to my posts', posts_user_path(current_user) %></p>
+</div>

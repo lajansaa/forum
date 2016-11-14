@@ -1,0 +1,13 @@
+<h2>Latest Commented on Posts</h2>
+ <ul>
+ <% @latest_comments.each do |post| %>
+<% @posts.each do |post| %>
+<li>
+<%= post.title %>
+<%= link_to "Show", post_path(post), :method => :get %>
+<%= link_to "Edit", edit_post_path(post), :method => :get %>
+<%= link_to "Delete", post_path(post), :method => :delete, :data => { :confirm => "Are you sure?"} %>
+</li>
+<% end %>
+</ul>
+<% end %>
